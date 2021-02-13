@@ -119,7 +119,7 @@ def import_attachment():
     )
 
     if server:
-        server.select_folder(settings.PAPERMERGE_IMPORT_MAIL_INBOX)
+        server.select_folder(settings.PAPERMERGE_IMPORT_MAIL_INBOX, readonly=True)
         messages = server.search(['UNSEEN'])
 
         logger.debug(
